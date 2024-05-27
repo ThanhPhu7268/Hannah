@@ -1,0 +1,93 @@
+.cart-count {
+    width: 22px;
+    height: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -45px;
+    margin-left: 24px;
+    border-radius: 11px;
+    font-size: 14px;
+    background: rgb(56, 55, 55);
+    color: white;
+    font-family: monospace;
+}
+
+.nav-login-cart {
+    height: 58px;
+}
+
+/*thanh search*/
+.input-container {
+    position: relative;
+}
+
+.input {
+    padding: 10px;
+    height: 40px;
+    width: 30%;
+    border: 2px solid #0B2447;
+    border-top: none;
+    border-bottom: none;
+    font-size: 16px;
+    background: transparent;
+    outline: none;
+    box-shadow: 7px 7px 0px 0px #0B2447;
+    transition: all 0.5s;
+}
+
+.input:focus {
+    box-shadow: none;
+    transition: all 0.5s;
+}
+
+.label {
+    position: absolute;
+    top: 10px;
+    left: 38%;
+    color: #0B2447;
+    transition: all 0.5s;
+    transform: scale(0);
+    z-index: -1;
+}
+
+.input-container .topline {
+    position: absolute;
+    content: "";
+    background-color: #0B2447;
+    width: 0%;
+    height: 2px;
+    right: 0;
+    top: 0;
+    transition: all 0.5s;
+}
+
+.input-container input[type="text"]:focus~.topline {
+    width: 24%;
+    right: 28%;
+    transition: all 0.5s;
+}
+
+.input-container .underline {
+    position: absolute;
+    content: "";
+    background-color: #0B2447;
+    width: 0%;
+    height: 2px;
+    right: 0;
+    bottom: 0;
+    transition: all 0.5s;
+}
+
+.input-container input[type="text"]:focus~.underline {
+    width: 35%;
+    left: 30%;
+    transition: all 0.5s;
+}
+
+.input-container input[type="text"]:focus~.label {
+    top: -24px;
+    font-size: 20px;
+    transform: scale(1);
+    transition: all 0.5s;
+}
