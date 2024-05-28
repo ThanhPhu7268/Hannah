@@ -1,5 +1,5 @@
 import { Typography } from "@material-tailwind/react";
-import logo from '../../assets/logoDark.png'
+import logo from '../../assets/review.png'
 const LINKS = [
     {
         title: "Product",

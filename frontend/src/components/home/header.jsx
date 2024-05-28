@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import logo from '../../assets/logoDark.png'
+import logo from '../../assets/logo.png'
+import loNew from '../../assets/new.png'
 import '../home/home.css'
 import { Tooltip, Drawer, Button, Typography, IconButton, List, ListItem, ListItemPrefix, ListItemSuffix, Chip } from '@material-tailwind/react';
 import { Link } from 'react-router-dom';
@@ -45,8 +46,9 @@ function Header() {
     // }
 
     return (
-        <div className='max-w-screen-2xl' style={{ margin: 'auto' }}>
-            <div className='flex justify-end'>
+        <div /*className='max-w-screen-2xl'*/ style={{ margin: 'auto' }}>
+            <div style={{backgroundImage: `url(${loNew})`, backgroundSize: 'cover',backgroundRepeat: 'no-repeat', height: '100vh'}}>
+                <div className='flex justify-end'>
                 <Tooltip content="Language" placement="bottom">
                     <svg className='mt-1 hidden md:block' onClick={toggleLanguage} xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 512 512">
                         {isLanguage ? (
@@ -79,18 +81,18 @@ function Header() {
                     </svg>
                 </Tooltip>
             </div>
-            <div className='flex flex-row justify-between py-4' style={{ borderBottom: '1px solid', maxWidth: '1200px', margin: 'auto' }} >
+                <div className='flex flex-row justify-between py-4' style={{ borderBottom: '1px solid', width: '100%', margin: 'auto', }} >
                 <div class="flex flex-row items-center lg:flex hidden w-96">
-                    <li className="list-none m-2 uppercase font-medium text-base"><Link to='/1'>{t('Home')}</Link></li>
-                    <li className="list-none m-2 uppercase font-medium text-base"><Link to='/1'>{t('Facial')}</Link></li>
-                    <li className="list-none m-2 uppercase font-medium text-base"><Link to='/1'>{t('Hair')}</Link></li>
-                    <li className="list-none m-2 uppercase font-medium text-base"><Link to='/1'>{t('Body')}</Link></li>
-                    <li className="list-none m-2 uppercase font-medium text-base"><Link to='/1'>{t('Learn')}</Link></li>
+                    <li className="list-none m-2 uppercase text-base"><Link to='/1'>{t('Home')}</Link></li>
+                    <li className="list-none m-2 uppercase text-base"><Link to='/2'>{t('Facial')}</Link></li>
+                    <li className="list-none m-2 uppercase text-base"><Link to='/3'>{t('Hair')}</Link></li>
+                    <li className="list-none m-2 uppercase text-base"><Link to='/4'>{t('Body')}</Link></li>
+                    <li className="list-none m-2 uppercase text-base"><Link to='/5'>{t('Learn')}</Link></li>
                 </div>
-                <img src={logo} alt='logo' className='mr-10' style={{ width: 'auto', height: '70px' }} />
+                <img src={logo} alt='logo' className='' style={{marginRight:'11rem', width: 'auto', height: '70px' }} />
                 <div className='flex flex-row items-center'>
                     <Tooltip content="Search" placement="bottom">
-                        <svg className='hidden lg:block' onClick={() => setOpenTop(!openTop)} style={{ margin: '8px' }} xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+                        <svg className='hidden lg:block' onClick={() => setOpenTop(!openTop)}  xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
                             <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="m21 21l-4.343-4.343m0 0A8 8 0 1 0 5.343 5.343a8 8 0 0 0 11.314 11.314" />
                         </svg>
                     </Tooltip>
@@ -199,6 +201,7 @@ function Header() {
                         </List>
                     </Drawer>
                 </div>
+            </div>
             </div>
         </div>
     )
